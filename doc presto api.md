@@ -14,7 +14,7 @@
     {outlet} = menggunakan kode out => RST dan MSC 
     {date} = 2019-12-30
     {dept} = nama dept => CRISPY PIZZA
-    http://localhost/PRESTO/public/api/homeFb/RST?date=2020-01-01&dept=CRISPY PIZZA
+> local : http://localhost/PRESTO/public/api/homeFb/RST?date=2020-01-01&dept=CRISPY+PIZZA
 
 
 ## Report Payment
@@ -23,7 +23,7 @@
     {outlet} = menggunakan kode out => RST dan MSC
     {date} = 2019-12-30
     {dept} = nama dept => CRISPY PIZZA
-    http://localhost/PRESTO/public/api/paymentFb/RST?date=2019-11-20&dept=CRISPY KROBOKAN
+> http://localhost/PRESTO/public/api/paymentFb/RST?date=2019-11-20&dept=CRISPY KROBOKAN
 
 
 
@@ -34,7 +34,7 @@
     {outlet} = menggunakan kode out => RST dan MSC
     {date} = 2019-12-30
     {dept} = nama dept => CRISPY PIZZA
-    http://localhost/PRESTO/public/api/productSales/food/rst?date=2019-06-22&dept=CRISPY PIZZA
+> http://localhost/PRESTO/public/api/productSales/food/rst?date=2019-06-22&dept=CRISPY PIZZA
 
 
 ## Report Transaction summary (by APP)
@@ -43,28 +43,30 @@
     {outlet} = menggunakan kode out => RST dan MSC 
     {date} = 2019-12-30
     {dept} = nama dept => CRISPY PIZZA
-    http://localhost/PRESTO/public/api/transactionSummary/RST?date=2019-11-25&dept=CRISPY PIZZA
+> http://localhost/PRESTO/public/api/transactionSummary/RST?date=2019-11-25&dept=CRISPY PIZZA
 
+## Sales Performance
     Route::get('salesPerformance/{outlet}', 'Api\HomeController@salesPerformance'); // date dan dept
     ## salesPerformance [/salesPerformance/{outlet}?date=:date&dept=:dept]
     {outlet} = menggunakan kode out => RST dan MSC 
     {date} = 2019-12-30
     {dept} = nama dept [gross]
-    http://localhost/PRESTO/public/api/salesPerformance/RST?date=2019-11-25&dept=CRISPY PIZZA
+> http://localhost/PRESTO/public/api/salesPerformance/RST?date=2019-11-25&dept=CRISPY PIZZA
 
 
-
+## Sales Trafic
     Route::get('salesTrafic/{outlet}', 'Api\HomeController@salesTrafic'); // date dan dept
     ## salesTrafic [/salesTrafic/{outlet}?date=:date&dept=:dept]
     {outlet} = menggunakan kode out => RST dan MSC 
     {date} = 2019-12-30
     {dept} = nama dept [gross]
-    http://localhost/PRESTO/public/api/salesTrafic/RST?date=2019-11-25&dept=CRISPY PIZZA
+> http://localhost/PRESTO/public/api/salesTrafic/RST?date=2019-11-25&dept=CRISPY PIZZA
 
-
+## Outlets
     Route::get('getOutlets', 'Api\HomeController@getOutlets');
     ## Get Outlets [/getOutlets]
-    http://localhost/PRESTO/public/api/getOutlets
+> http://localhost/PRESTO/public/api/getOutlets
+```json
     [
         {
             "kode_out": "MSC",
@@ -79,11 +81,12 @@
             "nama_out": "All Outlet"
         }
     ]
-
-
+```
+## Departement
     Route::get('getDept', 'Api\HomeController@getDept');
     ## getDept [/getDept]
-    http://localhost/PRESTO/public/api/getDept
+> http://localhost/PRESTO/public/api/getDept
+```json
     [
         {
             "nama_dept": "CRISPY PIZZA",
@@ -98,7 +101,7 @@
             "unit_bisnis": "CRISPY PIZZA"
         },
     ]
-
+```
 
 # Baru (Dashboard PRESTO)
 {date} = 2019-12-30,
@@ -119,8 +122,10 @@
     {outlet} = dari form input setOutlet, menggunakan nama_dept => CHRISPY PIZZA
             merubah parameter {outlet} menjadi {dept}
     {tipe} = ('WTD', 'YTD', 'MTD') default 'YTD' [total gross] //--------- khusus ---------//
+    
     http://localhost/PRESTO/public/api/ajaxBestOutlet?date=2019-11-28&outlet=all&tipe=YTD
-    ==> http://localhost/PRESTO/public/api/ajaxBestOutlet?date=2019-11-28&dept=CRISPY KROBOKAN&tipe=YTD
+
+> baru : http://localhost/PRESTO/public/api/ajaxBestOutlet?date=2019-11-28&dept=CRISPY KROBOKAN&tipe=YTD
 
 
 ## top ten sales by product
@@ -133,8 +138,8 @@
     {type} = food, beverage
     {jenis_outlet} =  (rst atau msc) default all
             merubah parameter {jenis_outlet} menjadi {outlet}
-    http://localhost/PRESTO/public/api/ajaxSellProduct?type=food&date=2019-11-28&outlet=CRISPY PIZZA&tipe=YTD&jenis_outlet=msc
-    ==> http://localhost/PRESTO/public/api/ajaxSellProduct?type=food&date=2019-11-28&dept=CRISPY PIZZA&tipe=YTD&outlet=rst
+    lama : http://localhost/PRESTO/public/api/ajaxSellProduct?type=food&date=2019-11-28&outlet=CRISPY PIZZA&tipe=YTD&jenis_outlet=msc
+> baru : http://localhost/PRESTO/public/api/ajaxSellProduct?type=food&date=2019-11-28&dept=CRISPY PIZZA&tipe=YTD&outlet=rst
 
 
 ## report analisys by time order
@@ -144,8 +149,8 @@
     {outlet} = dari form input setOutlet, menggunakan nama_dept => CHRISPY PIZZA
             merubah parameter {outlet} menjadi {dept}
     {tipe} = ('MTD', 'DTD') default 'MTD' //--------- khusus ---------//
-    http://localhost/PRESTO/public/api/ajaxAnalisisByTime?date=2019-11-20&outlet=CRISPY_KROBOKAN&tipe=MTD
-    ==> http://localhost/PRESTO/public/api/ajaxAnalisisByTime?date=2019-11-20&dept=CRISPY_KROBOKAN&tipe=MTD
+    lama : http://localhost/PRESTO/public/api/ajaxAnalisisByTime?date=2019-11-20&outlet=CRISPY_KROBOKAN&tipe=MTD
+> baru :http://localhost/PRESTO/public/api/ajaxAnalisisByTime?date=2019-11-20&dept=CRISPY_KROBOKAN&tipe=MTD
 
 
 ## report average bill net per pax
@@ -155,20 +160,22 @@
     {outlet} = dari form input setOutlet, menggunakan nama_dept => CHRISPY PIZZA
             merubah parameter {outlet} menjadi {dept}
     {tipe} = ('YTD', 'DTD') default 'YTD' //--------- khusus ---------//
-    http://localhost/PRESTO/public/api/ajaxAnalisisAverage?date=2019-11-12&outlet=CRISPY BANDUNG&tipe=YTD
-    ==> http://localhost/PRESTO/public/api/ajaxAnalisisAverage?date=2019-11-12&dept=CRISPY BANDUNG&tipe=YTD
+    lama : http://localhost/PRESTO/public/api/ajaxAnalisisAverage?date=2019-11-12&outlet=CRISPY BANDUNG&tipe=YTD
+> http://localhost/PRESTO/public/api/ajaxAnalisisAverage?date=2019-11-12&dept=CRISPY BANDUNG&tipe=YTD
 
 
 # DRR
 
-// office = rst, msc
-// TyPE = Food dan beverage
-// date = 2019-12-30
-// setOutlet = nama_dept seperti CHRISPY PIZZA
-// outlet = nama_dept seperti CHRISPY PIZZA
+office = rst, msc <br>
+TyPE = Food dan beverage <br>
+date = 2019-12-30 <br>
+setOutlet = nama_dept seperti CHRISPY PIZZA <br>
+outlet = nama_dept seperti CHRISPY PIZZA <br>
 
-// dept = nama_dept seperti CHRISPY PIZZA
-// outlet = rst, msc
+
+Diganti menjadi <br>
+dept = nama_dept seperti CHRISPY PIZZA <br>
+outlet = rst, msc <br>
 
 ## DRR
     Route::get('reportDailyRevenue', 'Api\HomeController@dailyRevenue');
@@ -179,9 +186,9 @@
     {outlet} = menggunakan nama_dept => CHRISPY PIZZA
             merubah parameter {outlet} menjadi {dept}
     // dirubah pada ReportRepositoryApi
-    http://localhost/PRESTO/public/api/reportDailyRevenue?date=2019-11-25&office=RST&outlet=CRISPY+PIZZA
-
-    ==> http://localhost/PRESTO/public/api/reportDailyRevenue?date=2019-11-25&outlet=RST&dept=CRISPY+PIZZA
+    lama : http://localhost/PRESTO/public/api/reportDailyRevenue?date=2019-11-25&office=RST&outlet=CRISPY+PIZZA
+    
+> http://localhost/PRESTO/public/api/reportDailyRevenue?date=2019-11-25&outlet=RST&dept=CRISPY+PIZZA
 
 ## Report Product favorite
     Route::get('reportProductFav', 'Api\HomeController@reportProductFav')->name('report.product.fav'); // F
@@ -189,9 +196,9 @@
     {date} = 2019-12-30
     {outlet} = menggunakan nama_dept => CHRISPY PIZZA
             merubah parameter {outlet} menjadi {dept}
-    http://localhost/PRESTO/public/api/reportProductFav?date=2019-11-20&outlet=CRISPY PIZZA
+    lama : http://localhost/PRESTO/public/api/reportProductFav?date=2019-11-20&outlet=CRISPY PIZZA
 
-    ==> http://localhost/PRESTO/public/api/reportProductFav?date=2019-11-20&dept=CRISPY PIZZA
+> http://localhost/PRESTO/public/api/reportProductFav?date=2019-11-20&dept=CRISPY PIZZA
  
 ## report analisis by day (sunday, monday dll)
     Route::get('reportKasir', 'Api\HomeController@reportKasir')->name('report.kasir');
@@ -199,9 +206,9 @@
     {date} = 2019-12-30,
     {setOutlet} = menggunakan nama_dept => CHRISPY PIZZA
             merubah parameter {setOutlet} menjadi {dept}
-    http://localhost/PRESTO/public/api/reportKasir?date=2019-11-25&setOutlet=CRISPY BANDUNG
+    lama : http://localhost/PRESTO/public/api/reportKasir?date=2019-11-25&setOutlet=CRISPY BANDUNG
 
-    ==> http://localhost/PRESTO/public/api/reportKasir?date=2019-11-25&dept=CRISPY BANDUNG
+> http://localhost/PRESTO/public/api/reportKasir?date=2019-11-25&dept=CRISPY BANDUNG
 
 
 # PROCEDURE 
