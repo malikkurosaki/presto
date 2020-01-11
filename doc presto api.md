@@ -1,42 +1,50 @@
-# Presto
-
-
-> url : https://presto-online.barongpos.com/api
+# Presto Mobile Api
 
 # API FB 
-**outlet** = rst, msc <br>
-**dept** = nama_dept seperti CHRISPY PIZZA <br>
-**type** = Food dan beverage <br>
+
+`url : https://presto-online.barongpos.com/api`
+
+- **outlet** = rst, msc <br>
+- **dept** = nama_dept seperti CHRISPY PIZZA <br>
+- **type** = Food dan beverage <br>
 
 ## Report Overview
-    Route::get('homeFb/{outlet}', 'Api\HomeController@indexFb'); // date dan dept
-    ## homeFb [/homeFb/{outlet}?date=:date&dept=:dept]
-    {outlet} = menggunakan kode out => RST dan MSC 
-    {date} = 2019-12-30
-    {dept} = nama dept => CRISPY PIZZA
-> http://localhost/PRESTO/public/api/homeFb/RST?date=2020-01-01&dept=CRISPY+PIZZA
+
+`http://localhost/PRESTO/public/api/homeFb/RST?date=2020-01-01&dept=CRISPY+PIZZA`
+
+- Route::get('homeFb/{outlet}', 'Api\HomeController@indexFb'); // date dan dept
+- homeFb [/homeFb/{outlet}?date=:date&dept=:dept]
+- {outlet} = menggunakan kode out => RST dan MSC 
+- {date} = 2019-12-30
+- {dept} = nama dept => CRISPY PIZZA
 
 
 ## Report Payment
-    Route::get('paymentFb/{outlet}', 'Api\HomeController@paymentFb'); // date dan dept
-    ## paymentFb [/paymentFb/{outlet}?date=:date&dept=:dept]
-    {outlet} = menggunakan kode out => RST dan MSC
-    {date} = 2019-12-30
-    {dept} = nama dept => CRISPY PIZZA
-> http://localhost/PRESTO/public/api/paymentFb/RST?date=2019-11-20&dept=CRISPY+KROBOKAN
 
+`http://localhost/PRESTO/public/api/paymentFb/RST?date=2019-11-20&dept=CRISPY+KROBOKAN`
 
+- Route::get('paymentFb/{outlet}', 'Api\HomeController@paymentFb'); // date dan dept
+- paymentFb [/paymentFb/{outlet}?date=:date&dept=:dept]
+- {outlet} = menggunakan kode out => RST dan MSC
+- {date} = 2019-12-30
+- {dept} = nama dept => CRISPY PIZZA
+  
 
 ## Top 10 Product sales (yg dari APP PHIS)
-    Route::get('productSales/{type}/{outlet}', 'Api\HomeController@productSales'); // ok, ditambah date dan dept
-    ## productSales [/productSales/{type}/{outlet}?date=:date&dept=:dept]
-    {type} = menggunakan food atau beverage, 
-    {outlet} = menggunakan kode out => RST dan MSC
-    {date} = 2019-12-30
-    {dept} = nama dept => CRISPY PIZZA
-> http://localhost/PRESTO/public/api/productSales/food/rst?date=2019-06-22&dept=CRISPY+PIZZA
 
-### Update 2019-01-10
+`http://localhost/PRESTO/public/api/productSales/food/rst?date=2019-06-22&dept=CRISPY+PIZZA`
+
+- Route::get('productSales/{type}/{outlet}', 'Api\HomeController@productSales'); // ok, ditambah date dan dept
+- productSales [/productSales/{type}/{outlet}?date=:date&dept=:dept]
+- {type} = menggunakan food atau beverage, 
+- {outlet} = menggunakan kode out => RST dan MSC
+- {date} = 2019-12-30
+- {dept} = nama dept => CRISPY PIZZA
+
+
+# Update 2019-01-10
+
+
     Ditambahkan parameter tipe = MTD, DTD, YTD
 > http://localhost/PRESTO/public/api/productSales/food/rst?date=2019-06-22&dept=CRISPY+PIZZA&tipe=MTD
 
