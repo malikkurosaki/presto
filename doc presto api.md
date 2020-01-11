@@ -36,6 +36,10 @@
     {dept} = nama dept => CRISPY PIZZA
 > http://localhost/PRESTO/public/api/productSales/food/rst?date=2019-06-22&dept=CRISPY+PIZZA
 
+### Update 2019-01-10
+    Ditambahkan parameter tipe = MTD, DTD, YTD
+> http://localhost/PRESTO/public/api/productSales/food/rst?date=2019-06-22&dept=CRISPY+PIZZA&tipe=MTD
+
 
 ## Report Transaction summary (by APP)
     Route::get('transactionSummary/{outlet}', 'Api\HomeController@transactionSummary'); // date dan dept
@@ -44,6 +48,9 @@
     {date} = 2019-12-30
     {dept} = nama dept => CRISPY PIZZA
 > http://localhost/PRESTO/public/api/transactionSummary/RST?date=2019-11-25&dept=CRISPY+PIZZA
+
+### Update 2019-01-10
+    Dibuatkan procedure
 
 ## Sales Performance
     Route::get('salesPerformance/{outlet}', 'Api\HomeController@salesPerformance'); // date dan dept
@@ -127,6 +134,9 @@
 
 > http://localhost/PRESTO/public/api/ajaxBestOutlet?date=2019-11-28&dept=CRISPY+KROBOKAN&tipe=YTD
 
+### Update 2019-01-10
+    Data yang ditampilkan dengan parameter MTD, label diubah ke format tanggal
+
 
 ## top ten sales by product
     Route::get('/ajaxSellProduct', ['as' => 'ajax.sell.product', 'uses' => 'Api\HomeController@ajaxSellProduct']);
@@ -142,7 +152,7 @@
 > http://localhost/PRESTO/public/api/ajaxSellProduct?type=food&date=2019-11-28&dept=CRISPY+PIZZA&tipe=YTD&outlet=rst
 
 
-## report analisys by time order
+## Report analisys by time order
     Route::get('/ajaxAnalisisByTime', ['as' => 'ajax.sales.time', 'uses' => 'Api\HomeController@analisysByTime']);
     ## ajaxAnalisisByTime [/ajaxAnalisisByTime?date=:date&outlet=:outlet&tipe=:tipe]
     {date} = 2019-12-30,
@@ -151,6 +161,9 @@
     {tipe} = ('MTD', 'DTD') default 'MTD' //--------- khusus ---------//
     lama : http://localhost/PRESTO/public/api/ajaxAnalisisByTime?date=2019-11-20&outlet=CRISPY_KROBOKAN&tipe=MTD
 > http://localhost/PRESTO/public/api/ajaxAnalisisByTime?date=2019-11-20&dept=CRISPY+KROBOKAN&tipe=MTD
+
+### Update 2019-01-10
+    Ditambahkan key baru time start, end
 
 
 ## report average bill net per pax
